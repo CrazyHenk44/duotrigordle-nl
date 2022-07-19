@@ -45,7 +45,7 @@ export default function Result(props: ResultProps) {
     <div className={cn("result", props.hidden && "hidden")}>
       <div className="share">
         <pre className="text" dangerouslySetInnerHTML={{ __html: parsed }} />
-        <button onClick={handleCopyToClipboardClick}>copy to clipboard</button>
+        <button onClick={handleCopyToClipboardClick}>Kopieer naar klembord</button>
       </div>
       <div className="words">
         {targets.map((target, i) => (
@@ -56,7 +56,7 @@ export default function Result(props: ResultProps) {
         <span dangerouslySetInnerHTML={{ __html: twemoji.parse("💛") }} />{" "}
         Duotrigordle?{" "}
         <a target="_blank" href="https://ko-fi.com/H2H0BTKB3">
-          Buy me a{" "}
+          Buy the original author a{" "}
           <span dangerouslySetInnerHTML={{ __html: twemoji.parse("☕️") }} /> !
         </a>
       </div>
@@ -86,13 +86,13 @@ function getShareableText(
 ) {
   const text = [];
   if (practice) {
-    text.push(`Practice Duotrigordle\n`);
+    text.push(`Oefenpuzzel Duotrigordle NL\n`);
   } else {
-    text.push(`Daily Duotrigordle #${id}\n`);
+    text.push(`Duotrigordle NL #${id}\n`);
   }
-  text.push(`Guesses: ${guessCount ?? "X"}/${NUM_GUESSES}\n`);
+  text.push(`Pogingen: ${guessCount ?? "X"}/${NUM_GUESSES}\n`);
   if (timeElapsed !== null) {
-    text.push(`Time: ${formatTimeElapsed(timeElapsed)}\n`);
+    text.push(`Tijd: ${formatTimeElapsed(timeElapsed)}\n`);
   }
   const cols = 4;
   const rows = Math.ceil(NUM_BOARDS / cols);
@@ -115,6 +115,6 @@ function getShareableText(
 
     text.push(row.join(" ") + "\n");
   }
-  text.push("https://duotrigordle.com/");
+  text.push("https://duotrigordle-nl.herokuapp.com/");
   return text.join("");
 }

@@ -63,8 +63,8 @@ export default function Header() {
   const numGuesses = guesses.length;
   const practice = useSelector((s) => s.game.practice);
   const title = practice
-    ? `Practice Duotrigordle`
-    : `Daily Duotrigordle #${id}`;
+    ? `Oefenpuzzel Duotrigordle NL`
+    : `Dagelijkse Duotrigordle NL #${id}`;
   const gameOver = useSelector((s) => s.game.gameOver);
   const extraGuessesNum =
     NUM_GUESSES - NUM_BOARDS - (numGuesses - boardsCompleted);
@@ -86,8 +86,8 @@ export default function Header() {
   const handleNewClick = () => {
     newRef.current?.blur();
     const res = window.confirm(
-      "Are you sure you want to start a new practice duotrigordle?\n" +
-        "(Your current progress will be lost)"
+      "Weet je zeker dat je een nieuwe oefenpuzzel wilt beginnen?\n" +
+        "(Je huidige voortgang gaat verloren)"
     );
     if (!res) return;
     const id = MersenneTwister().u32();
@@ -96,8 +96,8 @@ export default function Header() {
   const handleBackClick = () => {
     backRef.current?.blur();
     const res = window.confirm(
-      "Are you sure you want to exit practice mode?\n" +
-        "(Your current progress will be lost)"
+      "Weet je zeker dat je de oefenpuzzel wilt verlaten?\n" +
+        "(Je huidige voortgang gaat verloren)"
     );
     if (!res) return;
     loadGameFromLocalStorage(dispatch);
@@ -160,14 +160,14 @@ export default function Header() {
               ref={backRef}
               onClick={handleBackClick}
             >
-              Back
+              Terug
             </button>
             <button
               className="mode-switch"
               ref={newRef}
               onClick={handleNewClick}
             >
-              New
+              Nieuw
             </button>
           </>
         ) : (
@@ -177,35 +177,35 @@ export default function Header() {
               ref={practiceRef}
               onClick={handlePracticeClick}
             >
-              Practice
+              Oefen
             </button>
             <div></div>
           </>
         )}
         <p className="title">{title}</p>
         <button className="icon" onClick={() => dispatch(showStatsPopup())}>
-          <img src={statsSvg} alt="Stats" />
+          <img src={statsSvg} alt="Statistieken" />
         </button>
         <button className="icon" onClick={() => dispatch(showAboutPopup())}>
           <img src={helpSvg} alt="Help" />
         </button>
         <button className="icon" onClick={() => dispatch(showSettingsPopup())}>
-          <img src={settingsSvg} alt="Settings" />
+          <img src={settingsSvg} alt="Instellingen" />
         </button>
         <button className="icon" onClick={handleFullscreenClick}>
           <img
             src={fullscreen ? fullscreenExitSvg : fullscreenSvg}
-            alt="Go Fullscreen"
+            alt="Volledig scherm"
           />
         </button>
       </div>
       <div className="row-2">
         <p>
-          Boards Complete: {boardsCompleted}/{NUM_BOARDS}
+          Gevonden: {boardsCompleted}/{NUM_BOARDS}
         </p>
         <Timer showResetText={reset} />
         <p className={cn(cannotWin && !gameOver && "cannot-win")}>
-          Guesses Used: {numGuesses}/{NUM_GUESSES} ({extraGuesses})
+          Pogingen: {numGuesses}/{NUM_GUESSES} ({extraGuesses})
         </p>
       </div>
     </div>
@@ -240,7 +240,7 @@ function Timer(props: TimerProps) {
   }, [showTimer, flipFlop]);
 
   if (props.showResetText) {
-    return <p className="timer">New Game</p>;
+    return <p className="timer">Nieuwe puzzel</p>;
   }
   if (!showTimer) {
     return <p />;

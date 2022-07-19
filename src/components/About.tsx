@@ -29,13 +29,24 @@ export default function About() {
   return (
     <div className={cn("popup-wrapper", !shown && "hidden")}>
       <div className="popup">
-        <p>Guess all 32 Duotrigordle words in 37 tries!</p>
+        <p>Vind alle 32 Duotrigordle woorden in 37 pogingen!</p>
         <p>
-          A new Daily Duotrigordle will be available in {hoursRemaining} hour
-          {hoursRemaining === "1" ? "" : "s"}.
+          Een nieuwe dagelijkse Duotrigordle komt beschikbaar in {hoursRemaining} uur.
         </p>
         <hr className="separator" />
-        <p>Duotrigordle by Bryan Chen</p>
+        <p>Duotrigordle NL van CrazyHenk</p>
+        <p>
+          Broncode op{" "}
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://github.com/CrazyHenk44/duotrigordle-nl"
+          >
+            GitHub
+          </a>
+        </p>
+        <hr className="separator" />
+        <p>Original Duotrigordle by Bryan Chen</p>
         <p>
           Source code on{" "}
           <a
@@ -93,7 +104,7 @@ export default function About() {
           </li>
         </ul>
         <button className="close" onClick={() => dispatch(hidePopups())}>
-          close
+          Sluiten
         </button>
       </div>
     </div>

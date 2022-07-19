@@ -93,9 +93,9 @@ export default function App() {
   if (window.top !== window) {
     return (
       <p>
-        Play duotrigordle at{" "}
-        <a href="https://duotrigordle.com" target="_blank" rel="noreferrer">
-          https://duotrigordle.com
+        Speel duotrigordle NL op{" "}
+        <a href="https://duotrigordle-nl.herokuapp.com/" target="_blank" rel="noreferrer">
+          https://duotrigordle-nl.herokuapp.com/
         </a>{" "}
         (if you are seeing this message, the website you're playing on probably
         stole this game and/or is making ad revenue)

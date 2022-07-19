@@ -26,7 +26,7 @@ export function Settings() {
               dispatch(updateSettings({ colorBlindMode: e.target.checked }))
             }
           />
-          <label htmlFor="colorblind-mode">Colorblind mode</label>
+          <label htmlFor="colorblind-mode">Modus voor kleurenblinden</label>
         </div>
         <div className="group">
           <input
@@ -37,7 +37,7 @@ export function Settings() {
               dispatch(updateSettings({ showTimer: e.target.checked }))
             }
           />
-          <label htmlFor="show-timer">Show speedrun timer</label>
+          <label htmlFor="show-timer">Toon timer</label>
         </div>
         <div className="group">
           <input
@@ -48,7 +48,7 @@ export function Settings() {
               dispatch(updateSettings({ wideMode: e.target.checked }))
             }
           />
-          <label htmlFor="wide-mode">Wide mode</label>
+          <label htmlFor="wide-mode">Meer borden in de breedte</label>
         </div>
         <div className="group">
           <input
@@ -61,7 +61,7 @@ export function Settings() {
               )
             }
           />
-          <label htmlFor="hide-completed-boards">Hide completed boards</label>
+          <label htmlFor="hide-completed-boards">Verberg afgeronde woorden</label>
         </div>
         <div
           className={cn(
@@ -79,7 +79,7 @@ export function Settings() {
             }
             disabled={!hideCompletedBoards}
           />
-          <label htmlFor="animate-hiding">Fade out</label>
+          <label htmlFor="animate-hiding">Vervagen</label>
         </div>
         <div className="group">
           <input
@@ -90,10 +90,10 @@ export function Settings() {
               dispatch(updateSettings({ hideKeyboard: e.target.checked }))
             }
           />
-          <label htmlFor="hide-keyboard">Hide keyboard</label>
+          <label htmlFor="hide-keyboard">Verberg toetsenbord</label>
         </div>
         <button className="close" onClick={() => dispatch(hidePopups())}>
-          close
+          Sluiten
         </button>
       </div>
     </div>
