@@ -37,8 +37,8 @@ export default function Result(props: ResultProps) {
   const handleCopyToClipboardClick = () => {
     navigator.clipboard
       .writeText(shareableText)
-      .then(() => alert("Copied results to clipboard!"))
-      .catch(() => alert("There was an error copying text to the clipboard"));
+      .then(() => alert("Gekopieerd!"))
+      .catch(() => alert("Het is niet gelukt om de resultaten op het klembord te zetten."));
   };
 
   return (
