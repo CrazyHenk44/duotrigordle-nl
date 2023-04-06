@@ -5,7 +5,9 @@ https://duotrigordle.com
 Put your skills to the test and solve thirty-two Wordles at once! You have 37 guesses to solve all 32 words. A new Duotrigordle available each day to solve.
 
 ## Running Locally
+Docker image: pull via : docker pull ghcr.io/crazyhenk44/duotrigordle-nl:main
 
+## Building Locally
 First clone the repository
 
 ```
